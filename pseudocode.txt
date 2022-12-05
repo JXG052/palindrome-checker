@@ -1,0 +1,56 @@
+// PALINDROME CHECKER
+    //  CHALLENGE
+            Return true if the given string is a palindrome. Otherwise, return false.
+            A palindrome is a word or sentence that's spelled the same way both forward and backward, 
+                ignoring punctuation, case, and spacing.
+
+            Note: You'll need to remove all non-alphanumeric characters (punctuation, spaces and symbols) 
+                and turn everything into the same case (lower or upper case) in order to check for palindromes.
+
+            We'll pass strings with varying formats, such as racecar, RaceCar, and race CAR among others.
+
+            We'll also pass strings with special symbols, such as 2A3*3a2, 2A3 3a2, and 2_A3*3#A2
+    
+    INPUT: 
+        //  string
+
+    OUTPUT:
+        // true if string flipped = string forward
+        // or false
+
+    SOLUTION:
+        // turn input string into a lowercase array with no white spaces
+        // let new array = []
+             //  iterate through array, pushing to newArray
+        // if (newArray == inputArray) 
+        return true
+        // if not 
+        // return false
+
+SOLUTION 0.1:
+    /*
+        function palindromeCheck.1 (str) {
+                                                                        // turn string into lowercase array
+            let inputArray = str.toLowerCase().split("") 
+                                                                        // console.log(inputArray)
+                                                                        // copy input array
+            let reverseArray = [...inputArray]
+                                                                        // reverse it
+            reverseArray.reverse()
+                                                                        // make string
+            let reverseStr = reverseArray.join("")
+                                                                        //console.log(reverseStr)
+                 if (reverseStr == str ){
+                    return true
+                }
+             return false
+        
+    }
+
+TEST   console.log(palindromeCheck.1("_eye"))
+    */  this failed because of the underscore _eye
+
+    // Solution .1a 
+        //  How do we remove the  underscore at the same point we turn it toLowerCase
+        // regex - create a  regex that matches underscores. then do noUnderScoreString = str.match(regex)
+        // regex = /_/ignoring
