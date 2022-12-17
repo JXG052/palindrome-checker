@@ -6,6 +6,9 @@
 // return true
 // if not 
 // return false
+const input = document.getElementById('string');
+const output = document.getElementById('output');
+input.addEventListener('change', palindromeCheck1(input.value))
 
     function palindromeCheck1 (str) {
         // remove any non characters  from input  string and convert to lower case
@@ -25,12 +28,12 @@
         let reverseStr = reverseArray.join("")
         console.log(`this is the reverse string: ${reverseStr}`)
         if (reverseStr == noUndsString ){
-            return true
+            alert('is palindrome');
         }
-        return false  
+            alert('is not palindrome');  
         }
 
-console.log(palindromeCheck1("A man, a plan, -a canal. Panama"))
+
 
     // Solution .1a 
         //  How do we remove the  underscore at the same point we turn it toLowerCase

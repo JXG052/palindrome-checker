@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <label for="string">Enter a word or sentence: </label>
+    <input type="text" id="palindrome" name="string">
+    <button type="button" onclick="palindromeCheck1()">Submit</button>
+    <p id="output"></p>
+    <script>
+            function palindromeCheck1 () {
+                let str = document.getElementById("palindrome").value;
+                let text;
+        // remove any non characters  from input  string and convert to lower case
+        let myRegex = /[^a-zA-Z0-9]/ig;
+        let noUndsString = str.replace(myRegex, "").toLowerCase()
+        //console.log(`this is the noUndsString: ${noUndsString}`)
+        // turn altered  string into lowercase array
+        let inputArray = noUndsString.split("") 
+        
+        
+        //console.log(inputArray)
+        // copy input array
+        let reverseArray = [...inputArray]
+        // reverse it
+        reverseArray.reverse()
+        // make string
+        let reverseStr = reverseArray.join("")
+        // console.log(`this is the reverse string: ${reverseStr}`)
+        if (reverseStr == noUndsString ){
+            text = "the sentence you entered is palindrome";
+        } else {
+            text = "the sentence you entered is not palindrome";
+        }
+            return document.getElementById("output").innerHTML = text;
+        }
+
+
+    </script>
+</body>
+</html>
